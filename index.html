@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aroma Menu</title>
+    
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+    /* --- Custom Coffee Theme Overrides --- */
+    :root {
+        --coffee-dark: #233042;
+        --coffee-medium: #2b405e;
+        --coffee-light: #d2b48c;
+        --cream: #f0ebda;
+    }
+
+    body {
+        background-color: #f0ebda; /* Very light cream background */
+        font-family: 'clarendon', sans-serif;
+    }
+
+    /* Navbar Customization */
+    .navbar {
+        background-color: var(--coffee-dark);
+        /* Center the logo since there is no menu */
+        display: flex;
+        justify-content: center;
+    }
+    .navbar-item {
+        color: var(--coffee-light);
+    }
+    .navbar-brand {
+        /* Ensure brand doesn't stretch weirdly in flex */
+        margin-left: 0; 
+    }
+    /* divider */
+    .pattern-divider {
+        background-image: url('img/pattern1.png'); 
+        background-repeat: repeat-x; 
+        background-size: auto 65px; 
+        height: 65px; 
+        width: 100%; 
+        border-bottom: 6px solid var(--coffee-dark);
+    }
+    /* Hero Section */
+    .hero-title {
+        font-family: 'Playfair Display', serif;
+        color: var(--coffee-dark); /* Changed to match navbar */
+    }
+    .styled-title::after {
+        content: ""; /* Required for pseudo-elements */
+        display: block; /* Allows setting width and margin */
+        
+        /* 2. Style the Line */
+        width: 60px; /* Adjust for desired length */
+        height: 3px; /* Adjust for desired thickness */
+        background-color: #878787; /* Use your brand color or Bulma's primary color */
+        
+        /* 3. Position the Line */
+        margin: 10px auto 0; /* Centers the line horizontally (auto) and adds 10px space below the text */
+        
+        /* 4. Aesthetic Touch (Optional) */
+        border-radius: 2px;
+    }
+
+    /* Tabs Customization - Minimal Underline Style */
+    
+    /* Remove the default long line under the whole list */
+    .tabs ul {
+        border-bottom: none;
+    }
+
+    .tabs.is-boxed li.is-active a {
+        background-color: transparent;
+    }
+    
+    /* Base tab link style */
+    .tabs a {
+        color: var(--coffee-medium);
+        border-bottom-width: 2px; /* Make underline slightly thicker */
+        border-bottom-color: transparent; /* Invisible by default */
+        transition: all 0.3s ease;
+        font-weight: 400;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0; /* Align closely */
+    }
+
+    /* Hover state */
+    .tabs a:hover {
+        color: var(--coffee-dark);
+        border-bottom-color: var(--coffee-light);
+        background-color: transparent; /* Prevent gray background on hover */
+    }
+
+    /* Active state (The Underline) */
+    .tabs li.is-active a {
+        color: var(--coffee-dark);
+        border-bottom-color: var(--coffee-dark);
+    }
+
+    
+    /* --- ☕️ Aesthetic Scrollbar for Tabs (New Code) ☕️ --- */
+    /* 1. Enable horizontal scrolling for the tabs container on small screens */
+    .tabs {
+        overflow-x: auto; 
+        /* Fallback: Hide default scrollbar on Firefox/IE */
+        scrollbar-width: none; 
+    }
+
+    /* 2. Hide the default scrollbar on Webkit (Chrome, Safari, etc.) */
+    .tabs::-webkit-scrollbar {
+        /* Makes the scrollbar itself very thin/invisible for a cleaner look */
+        height: 6px; 
+        background: transparent;
+    }
+
+    /* 3. Style the scrollbar track (the background) for Webkit */
+    .tabs::-webkit-scrollbar-track {
+        background: var(--cream); /* Matches the body background */
+        border-radius: 10px;
+    }
+
+    /* 4. Style the scrollbar thumb (the part the user drags) for Webkit */
+    .tabs::-webkit-scrollbar-thumb {
+        background-color: var(--coffee-dark); /* Dark color for visibility */
+        border-radius: 10px; 
+    }
+
+    /* Optional: Make the thumb slightly lighter on hover */
+    .tabs::-webkit-scrollbar-thumb:hover {
+        background-color: var(--coffee-medium);
+    }
+    /* --- End Scrollbar Styles --- */
+
+
+    /* Card Customization */
+    .card {
+        background-color: #233042;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(35, 48, 66, 0.2);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem; /* Add space between stacked cards */
+        position: relative; /* For positioning the price absolutely */
+    }
+    .card-image {
+        overflow: hidden; /* Ensure image doesn't overflow card */
+        border-radius: 12px 12px 0 0;
+    }
+    .card-image img {
+        width: 100%;
+        height: 180px; /* Fixed height for consistency */
+        object-fit: cover; /* Maintain aspect ratio while filling container */
+    }
+    .card-content {
+        flex-grow: 1;
+        padding: 1rem; /* Compact padding */
+        position: relative; /* For positioning the price */
+        padding-bottom: 2.5rem; /* Make room for the price at bottom */
+    }
+    .title {
+        margin-bottom: 0.25rem !important;
+        font-size: 0.8rem; /* Smaller title font */
+        color: #233042;
+    }
+    .titlez {
+        font-size: 1.2rem; /* Smaller title font */
+        color: var(--cream);
+    }
+    .price-tag {
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--cream);
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        display: inline-flex;
+        flex-direction: row-reverse; /* Shows Arabic first visually */
+        gap: 0.3rem;
+        align-items: center;
+    }
+    
+    /* Responsive grid adjustments */
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    /* Mobile-first approach: single column on small screens */
+    @media (max-width: 768px) {
+        .menu-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .card-image img {
+            height: 200px; /* Slightly taller images on mobile */
+        }
+    }
+    
+    /* Tablet: 2 columns */
+    @media (min-width: 769px) and (max-width: 1023px) {
+        .menu-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    /* Desktop: 3 columns */
+    @media (min-width: 1024px) {
+        .menu-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    /* everything fonts */
+
+    @font-face {
+    font-family: 'thesans';
+    src: url('fonts/TheSans-Plain.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'cambria';
+    src: url('fonts/cambria.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'clarendon';
+    src: url('fonts/Clarendon-DemiBold-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    
+    .arabic-text {
+    font-family: 'thesans', serif;
+    direction: rtl;
+    }
+
+</style>
+</head>
+<body>
+
+    <!-- 1. Navbar (Logo Only) -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <!-- Logo Icon -->
+            <img src="img/novologo1.png" alt="Novo" style="max-height: 125px; height: auto;">
+        </div>
+    </nav>
+    
+    <!-- pattern -->
+    <div class="pattern-divider"></div>
+    
+    <!-- 2. Header/Hero -->
+    <section class="section pb-0">
+        <div class="container has-text-centered">
+            <h1 class="title is-1 hero-title styled-title">Menu</h1>
+        </div>
+    </section>
+
+    <!-- 3. Tabs Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Changed classes: Removed is-toggle, is-rounded. Kept is-centered, is-medium -->
+            <div class="tabs">
+                <ul>
+                    <li class="is-active" data-tab="hot-coffee">
+                        <a>Hot Coffee |&nbsp <span lang="ar" class="arabic-text">قهوة ساخنة</span></a>
+                    </li>
+                    <li data-tab="cold-coffee">
+                        <a>Cold Coffee |&nbsp<span lang="ar" class="arabic-text">قهوة باردة</span></a>
+                    </li>
+                    <li data-tab="sweets">
+                        <a>Sweets |&nbsp<span lang="ar" class="arabic-text">حلويات</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 4. Content Sections -->
+            
+            <!-- Tab 1: Hot Coffee -->
+            <div id="hot-coffee" class="tab-content">
+                <!-- Replaced Bulma columns with CSS Grid for better control -->
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/cold.jpg" alt="Latte">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Classic Latte | <span lang="ar" class="arabic-text">لاتيه</span></p>
+                            <p class="price-tag"><span>10.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=600&auto=format&fit=crop" alt="Cappuccino">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cappuccino</p>
+                            <p class="price-tag">4.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="https://images.unsplash.com/photo-1515442261630-184ed48e230d?q=80&w=600&auto=format&fit=crop" alt="Espresso">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Double Espresso</p>
+                            <p class="price-tag">$3.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Cold Coffee -->
+            <div id="cold-coffee" class="tab-content is-hidden">
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?q=80&w=600&auto=format&fit=crop" alt="Iced Coffee">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cold Brew</p>
+                            <p class="price-tag">$5.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="https://images.unsplash.com/photo-1461023058943-48dbf9456e20?q=80&w=600&auto=format&fit=crop" alt="Frappe">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Caramel Frappe</p>
+                            <p class="price-tag">$6.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Sweets -->
+            <div id="sweets" class="tab-content is-hidden">
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="https://images.unsplash.com/photo-1555507036-ab1f40388085?q=80&w=600&auto=format&fit=crop" alt="Croissant">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Butter Croissant</p>
+                            <p class="price-tag">$3.50</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="https://images.unsplash.com/photo-1559507463-8a8bc522930c?q=80&w=600&auto=format&fit=crop" alt="Cheesecake">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">NY Cheesecake</p>
+                            <p class="price-tag">$5.50</p>
+                        </div>
+                    </div>
+
+                     <!-- Item 3 -->
+                     <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600&auto=format&fit=crop" alt="Muffin">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Blueberry Muffin</p>
+                            <p class="price-tag">$3.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Logic for Tab Switching
+            const tabs = document.querySelectorAll('.tabs li');
+            const tabContentBoxes = document.querySelectorAll('.tab-content');
+
+            tabs.forEach((tab) => {
+                tab.addEventListener('click', () => {
+                    // Remove is-active from all tabs
+                    tabs.forEach(item => item.classList.remove('is-active'));
+                    // Add is-active to clicked tab
+                    tab.classList.add('is-active');
+
+                    // Hide all content boxes
+                    tabContentBoxes.forEach(box => box.classList.add('is-hidden'));
+                    
+                    // Show the target content box
+                    const targetId = tab.dataset.tab;
+                    const targetContent = document.getElementById(targetId);
+                    targetContent.classList.remove('is-hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
