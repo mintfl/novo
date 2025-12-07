@@ -174,7 +174,7 @@
         color: #233042;
     }
     .titlez {
-        font-size: 1.2rem; /* Smaller title font */
+        font-size: 1rem; /* Smaller title font */
         color: var(--cream);
     }
     .price-tag {
@@ -278,11 +278,14 @@
             <!-- Changed classes: Removed is-toggle, is-rounded. Kept is-centered, is-medium -->
             <div class="tabs">
                 <ul>
-                    <li class="is-active" data-tab="hot-coffee">
-                        <a>Hot Coffee |&nbsp <span lang="ar" class="arabic-text">قهوة ساخنة</span></a>
+                    <li class="is-active" data-tab="drip">
+                        <a>Drip Coffee |&nbsp <span lang="ar" class="arabic-text">قهوة مقطرة</span></a>
                     </li>
-                    <li data-tab="cold-coffee">
-                        <a>Cold Coffee |&nbsp<span lang="ar" class="arabic-text">قهوة باردة</span></a>
+                    <li data-tab="classic">
+                        <a>Classic Coffee |&nbsp<span lang="ar" class="arabic-text">قهوة كلاسيك</span></a>
+                    </li>
+                    <li data-tab="today">
+                        <a>Today's Coffee |&nbsp<span lang="ar" class="arabic-text">قهوة اليوم</span></a>
                     </li>
                     <li data-tab="sweets">
                         <a>Sweets |&nbsp<span lang="ar" class="arabic-text">حلويات</span></a>
@@ -292,20 +295,20 @@
 
             <!-- 4. Content Sections -->
             
-            <!-- Tab 1: Hot Coffee -->
-            <div id="hot-coffee" class="tab-content">
+            <!-- Tab 1: drip Coffee -->
+            <div id="drip" class="tab-content">
                 <!-- Replaced Bulma columns with CSS Grid for better control -->
                 <div class="menu-grid">
                     <!-- Item 1 -->
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img src="img/novocup.png" alt="Latte">
+                                <img src="img/drip7.png" alt="Latte">
                             </figure>
                         </div>
                         <div class="card-content">
-                            <p class="titlez">Latte | <span lang="ar" class="arabic-text">لاتيه</span></p>
-                            <p class="price-tag"><span>16.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                            <p class="titlez">Luxury Yemini Haraz | <span lang="ar" class="arabic-text">يمني حراز تخمير فاخر</span></p>
+                            <p class="price-tag"><span>23.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
 
@@ -313,12 +316,38 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img src="img/novocup.png" alt="Cappuccino">
+                                <img src="img/drip7.png" alt="Cappuccino">
                             </figure>
                         </div>
                         <div class="card-content">
-                            <p class="titlez">Cappuccino | <span lang="ar" class="arabic-text">كابتشينو</span></p>
-                            <p class="price-tag"><span>16.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                            <p class="titlez">Dried Ugandan Blend | <span lang="ar" class="arabic-text">اوغندي بليند مجفف</span></p>
+                            <p class="price-tag"><span>17.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/drip7.png" alt="Cappuccino">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Dried Colombian Amalia | <span lang="ar" class="arabic-text">كولومبي اماليا مجفف</span></p>
+                            <p class="price-tag"><span>17.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/drip7.png" alt="Cappuccino">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Ethiopian Fana Anaerobic | <span lang="ar" class="arabic-text">اثيوبي فانا آناروبيك</span></p>
+                            <p class="price-tag"><span>17.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
 
@@ -326,19 +355,19 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img src="img/novocup.png" alt="Espresso">
+                                <img src="img/drip7.png" alt="Espresso">
                             </figure>
                         </div>
                         <div class="card-content">
-                            <p class="titlez">Flat White | <span lang="ar" class="arabic-text">فلات وايت</span></p>
-                            <p class="price-tag"><span>16.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                            <p class="titlez">Salvador Lucia Washed | <span lang="ar" class="arabic-text">سلفادور لوسيا مغسول</span></p>
+                            <p class="price-tag"><span>17.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tab 2: Cold Coffee -->
-            <div id="cold-coffee" class="tab-content is-hidden">
+            <!-- Tab 2: classic coffee -->
+            <div id="classic" class="tab-content is-hidden">
                 <div class="menu-grid">
                     <!-- Item 1 -->
                     <div class="card">
@@ -348,8 +377,130 @@
                             </figure>
                         </div>
                         <div class="card-content">
-                            <p class="titlez">Macchiato | <span lang="ar" class="arabic-text">ماكياتو</span></p>
-                            <p class="price-tag"><span>16.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                            <p class="titlez">Espresso | <span lang="ar" class="arabic-text">اسبريسو</span></p>
+                            <p class="price-tag"><span>11.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="Latte">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Spice Cinnamon Latte | <span lang="ar" class="arabic-text">لاتيه سبايس سينابون</span></p>
+                            <p class="price-tag"><span>18.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="coffee">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Spanish Latte | <span lang="ar" class="arabic-text">سبانش لاتيه</span></p>
+                            <p class="price-tag"><span>17.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="coffee">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cold Spanish Latte | <span lang="ar" class="arabic-text">سبانش لاتيه بارد</span></p>
+                            <p class="price-tag"><span>18.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="coffee">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cortado | <span lang="ar" class="arabic-text">كورتادو</span></p>
+                            <p class="price-tag"><span>14.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="coffee">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Latte | <span lang="ar" class="arabic-text">لاتيه</span></p>
+                            <p class="price-tag"><span>15.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="coffee">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cold Latte | <span lang="ar" class="arabic-text">لاتيه بارد</span></p>
+                            <p class="price-tag"><span>15.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="coffee">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Flat White | <span lang="ar" class="arabic-text">فلات وايت</span></p>
+                            <p class="price-tag"><span>14.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="coffee">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cappuccino | <span lang="ar" class="arabic-text">كابتشينو</span></p>
+                            <p class="price-tag"><span>15.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Today tab -->
+            <div id="today" class="tab-content is-hidden">
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="Latte">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Today's Coffee Small | <span lang="ar" class="arabic-text">قهوة اليوم صغير</span></p>
+                            <p class="price-tag"><span>11.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
 
@@ -361,10 +512,37 @@
                             </figure>
                         </div>
                         <div class="card-content">
-                            <p class="titlez">Spanish Latte | <span lang="ar" class="arabic-text">سبانش لاتيه</span></p>
-                            <p class="price-tag"><span>16.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                            <p class="titlez">Today's Coffee Small Cold | <span lang="ar" class="arabic-text">قهوة اليوم صغير بارد</span></p>
+                            <p class="price-tag"><span>11.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="Frappe">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Today's Coffee Big | <span lang="ar" class="arabic-text">قهوة اليوم كبير</span></p>
+                            <p class="price-tag"><span>13.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="Frappe">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Today's Coffee big Cold | <span lang="ar" class="arabic-text">قهوة اليوم كبير بارد</span></p>
+                            <p class="price-tag"><span>13.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -375,11 +553,77 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img src="img/novobox2.png" alt="Novo">
+                                <img src="img/novochoco.jpg" alt="Novo">
                             </figure>
                         </div>
                         <div class="card-content">
-                            <p class="titlez">Cheese Cake | <span lang="ar" class="arabic-text">تشيز كيك</span></p>
+                            <p class="titlez">Novo Chocolate | <span lang="ar" class="arabic-text">نوفو شوكلت</span></p>
+                            <p class="price-tag"><span>24.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/carrotcake.jpg" alt="Novo">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Carrot Cake | <span lang="ar" class="arabic-text">كيكة جزر</span></p>
+                            <p class="price-tag"><span>19.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/pecan.jpg" alt="Novo">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cheese Pecan | <span lang="ar" class="arabic-text">تشيز بيكان</span></p>
+                            <p class="price-tag"><span>19.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/cheesehaba.jpg" alt="Novo">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cheese Trend | <span lang="ar" class="arabic-text">تشيز الهبه</span></p>
+                            <p class="price-tag"><span>24.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/coconutcake.jpg" alt="Novo">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Coconut Cake | <span lang="ar" class="arabic-text">كوكونوت كيك</span></p>
+                            <p class="price-tag"><span>21.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/madrid.jpg" alt="Novo">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Cheese Madrid | <span lang="ar" class="arabic-text">تشيز مدريد</span></p>
                             <p class="price-tag"><span>22.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
@@ -388,12 +632,12 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img src="img/novobox2.png" alt="Novo">
+                                <img src="img/matilda.jpg" alt="Novo">
                             </figure>
                         </div>
                         <div class="card-content">
-                            <p class="titlez">Dolce | <span lang="ar" class="arabic-text">دولتشي</span></p>
-                            <p class="price-tag"><span>20.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                            <p class="titlez">Matilda Crunchy | <span lang="ar" class="arabic-text">ماتيلدا كرنشي</span></p>
+                            <p class="price-tag"><span>23.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
 
@@ -401,12 +645,12 @@
                      <div class="card">
                         <div class="card-image">
                             <figure class="image">
-                                <img src="img/novobox2.png" alt="Muffin">
+                                <img src="img/cheeseraspberry.jpg" alt="Muffin">
                             </figure>
                         </div>
                         <div class="card-content">
-                            <p class="titlez">Blueberry Muffin | <span lang="ar" class="arabic-text">مفن بالتوت</span></p>
-                            <p class="price-tag"><span>22.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                            <p class="titlez">Cheese Raspberry | <span lang="ar" class="arabic-text">تشيز التوت</span></p>
+                            <p class="price-tag"><span>19.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
                 </div>
