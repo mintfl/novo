@@ -278,7 +278,10 @@
             <!-- Changed classes: Removed is-toggle, is-rounded. Kept is-centered, is-medium -->
             <div class="tabs">
                 <ul>
-                    <li class="is-active" data-tab="drip">
+                    <li class="is-active" data-tab="sweets">
+                        <a>Sweets |&nbsp<span lang="ar" class="arabic-text">حلويات</span></a>
+                    </li>
+                    <li data-tab="drip">
                         <a>Drip Coffee |&nbsp <span lang="ar" class="arabic-text">قهوة مقطرة</span></a>
                     </li>
                     <li data-tab="classic">
@@ -287,8 +290,8 @@
                     <li data-tab="today">
                         <a>Today's Coffee |&nbsp<span lang="ar" class="arabic-text">قهوة اليوم</span></a>
                     </li>
-                    <li data-tab="sweets">
-                        <a>Sweets |&nbsp<span lang="ar" class="arabic-text">حلويات</span></a>
+                    <li data-tab="hot">
+                        <a>Hot Drinks |&nbsp<span lang="ar" class="arabic-text">مشروبات ساخنة</span></a>
                     </li>
                 </ul>
             </div>
@@ -296,7 +299,7 @@
             <!-- 4. Content Sections -->
             
             <!-- Tab 1: drip Coffee -->
-            <div id="drip" class="tab-content">
+            <div id="drip" class="tab-content is-hidden">
                 <!-- Replaced Bulma columns with CSS Grid for better control -->
                 <div class="menu-grid">
                     <!-- Item 1 -->
@@ -546,8 +549,53 @@
                 </div>
             </div>
 
+                        <!-- Today tab -->
+            <div id="hot" class="tab-content is-hidden">
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="Latte">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Hot Chocolate Small | <span lang="ar" class="arabic-text">هوت تشوكلت صغير</span></p>
+                            <p class="price-tag"><span>15.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="Frappe">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Hot Chocolate Large | <span lang="ar" class="arabic-text">هوت تشوكلت كبير</span></p>
+                            <p class="price-tag"><span>16.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novocup.png" alt="Frappe">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Tea | <span lang="ar" class="arabic-text">شاي</span></p>
+                            <p class="price-tag"><span>7.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <!-- Tab 3: Sweets -->
-            <div id="sweets" class="tab-content is-hidden">
+            <div id="sweets" class="tab-content">
                 <div class="menu-grid">
                     <!-- Item 1 -->
                     <div class="card">
@@ -638,6 +686,32 @@
                         <div class="card-content">
                             <p class="titlez">Matilda Crunchy | <span lang="ar" class="arabic-text">ماتيلدا كرنشي</span></p>
                             <p class="price-tag"><span>23.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/riyadh.jpg" alt="Novo">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">Riyadh Cheese | <span lang="ar" class="arabic-text">تشيز الرياض</span></p>
+                            <p class="price-tag"><span>22.00</span><span lang="ar" class="arabic-text">ريال</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="img/novobox2.png" alt="Novo">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="titlez">French Toast | <span lang="ar" class="arabic-text">فرنش توست</span></p>
+                            <p class="price-tag"><span>17.00</span><span lang="ar" class="arabic-text">ريال</span></p>
                         </div>
                     </div>
 
